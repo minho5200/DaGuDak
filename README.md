@@ -3,10 +3,12 @@
 - 기간 : 20. 10. 18 ~ 20. 11. 05
 - 팀원 : 5명
 
+&nbsp;&nbsp;&nbsp;
 
 # DB Modeling
 ![image](ERD.png)
 
+&nbsp;&nbsp;&nbsp;
 
 <details markdown = "1">
 <summary>Race Tables</summary>
@@ -37,8 +39,15 @@
  - 게시글에 달린 댓글 정보를 저장합니다.
 </details>
 
+&nbsp;&nbsp;&nbsp;
+
 # Technologies
  - Java, JavaScript
  - Spring Framework
  - Oracle
  - WebSocket
+
+&nbsp;&nbsp;&nbsp;
+
+# Project Structure
+![image](structure.png)
