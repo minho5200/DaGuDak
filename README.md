@@ -9,7 +9,7 @@ Team project using Spring MVC pattern
 <summary>Race Tables</summary>
 
 #### HORSE
- - 경기에 출전하는 경주마의 정보를 저장합니다.
+ - 경주마의 정보를 저장합니다.
   
 #### RACE
  - 경기 일정과 출전하는 경주마의 정보를 저장합니다.
