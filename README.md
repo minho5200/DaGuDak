@@ -1,5 +1,8 @@
 # DaGuDak
-Team project using Spring MVC pattern
+웹 경마 사이트
+- 기간 : 20. 10. 18 ~ 20. 11. 05
+- 팀원 : 5명
+
 
 # DB Modeling
 ![image](ERD.png)
