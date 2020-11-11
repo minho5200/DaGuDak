@@ -37,7 +37,7 @@
  
 #### BETTING_LIST
  - 회원들이 경기에 베팅한 정보를 저장합니다.
- 
+   
 </details>
 
 &nbsp;&nbsp;&nbsp;
