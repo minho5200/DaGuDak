@@ -5,6 +5,19 @@
 
 &nbsp;&nbsp;&nbsp;
 
+# Technologies
+ - Java, JavaScript
+ - Spring Framework
+ - Oracle
+ - WebSocket
+
+&nbsp;&nbsp;&nbsp;
+
+# Project Structure
+![image](structure.png)
+
+&nbsp;&nbsp;&nbsp;
+
 # DB Modeling
 ![image](ERD.png)
 
@@ -40,14 +53,3 @@
 </details>
 
 &nbsp;&nbsp;&nbsp;
-
-# Technologies
- - Java, JavaScript
- - Spring Framework
- - Oracle
- - WebSocket
-
-&nbsp;&nbsp;&nbsp;
-
-# Project Structure
-![image](structure.png)
