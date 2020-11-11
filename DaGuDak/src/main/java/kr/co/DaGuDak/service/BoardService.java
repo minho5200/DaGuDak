@@ -6,8 +6,6 @@ import java.util.List;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 
-import org.springframework.web.multipart.MultipartHttpServletRequest;
-
 import kr.co.DaGuDak.model.BoardVO;
 
 public interface BoardService {

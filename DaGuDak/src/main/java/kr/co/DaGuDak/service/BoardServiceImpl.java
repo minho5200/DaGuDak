@@ -209,6 +209,7 @@ public class BoardServiceImpl implements BoardService {
 		
 		
 		JSONArray jsonArr = (JSONArray)jsonObj.get("items"); //개별 검색 결과
+		@SuppressWarnings("unchecked")
 		Iterator<Object> iter = jsonArr.iterator();
 		
 		int i = 1;
@@ -219,6 +220,7 @@ public class BoardServiceImpl implements BoardService {
 			String url = (String)item.get("originallink");
 			vo.setContent((String)item.get("description")+"<br><br><br>출처 바로가기: <a href='" + url + "'>" + url + "</a>");
 			String pubDate = (String) item.get("pubDate");
+			@SuppressWarnings("deprecation")
 			Date date = new Date(pubDate);
 			vo.setRegdate(date);
 			vo.setBid(2);
