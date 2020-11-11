@@ -36,3 +36,9 @@
 #### COMMENTS
  - 게시글에 달린 댓글 정보를 저장합니다.
 </details>
+
+#Technologies
+ - Java, JavaScript
+ - Spring Framework
+ - Oracle
+ - WebSocket
