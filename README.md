@@ -43,7 +43,7 @@
 &nbsp;&nbsp;&nbsp;
 
 <details markdown = "1">
-<summary>Board tables</summary>
+<summary>Board Tables</summary>
 
 #### BOARD
  - 게시판 게시글 정보를 저장합니다.
