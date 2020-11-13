@@ -52,7 +52,7 @@
  - 게시글에 달린 댓글 정보를 저장합니다.
 </details>
 
-&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;
 
 # Demo
 
