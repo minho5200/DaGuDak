@@ -293,7 +293,7 @@ hr {
    
    <!-- 출전마 정보 -->
 <script type="text/javascript">
-var webSocket = new WebSocket('ws://192.168.0.104:8089/DaGuDak/racing/' + loginId);
+var webSocket = new WebSocket('ws://172.30.1.30:8089/DaGuDak/racing/' + loginId);
    /* 경기 출전할 말 리스트  -- RaceVO */
    var horseRoster = new Array(5); 
     horseRoster[0] = ${racingHorseList.first_Horse};

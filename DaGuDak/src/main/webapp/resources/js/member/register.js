@@ -17,7 +17,7 @@ function fn_idChk() {
                   $("#chkID").css("color", "green");
                   $("#chkID").html("사용가능한 아이디입니다.");
                   $("#submit").removeAttr("disabled");
-
+                  
                   if (member_id.search(/\s/) != -1) {
                      $("#chkID").css("color", "red");
                      document.getElementById('chkID').innerHTML = "아이디는 공백 없이 입력해주세요.";
@@ -33,7 +33,7 @@ function fn_idChk() {
                   $("#chkID").html("아이디를 입력해주세요.");
                   $("#idChk").attr("value", "N");
                   $("#submit").attr("disabled", "disabled");
-               }   else if (member_id.search(/\s/) != -1) {
+               }else if (member_id.search(/\s/) != -1) {
                   $("#chkID").css("color", "red");
                   document.getElementById('chkID').innerHTML = "아이디는 공백 없이 입력해주세요.";
                   $("#submit").attr("disabled", "disabled");
@@ -65,7 +65,7 @@ function chkPW() {
       return false;
    } else if (num < 0 || eng < 0 || spe < 0) {
       $("#chkPW").css("color", "red");
-      document.getElementById('chkPW').innerHTML = "영문,숫자, 특수문자를 혼합하여 입력해주세요.";
+      document.getElementById('chkPW').innerHTML = "영문,숫자,특수문자를 혼합하여 입력해주세요.";
       $("#submit").attr("disabled", "disabled");
 
       return false;
@@ -87,11 +87,10 @@ function duplicatePW() {
       document.getElementById('passwordChecked').style.color = "red";
       document.getElementById('passwordChecked').innerHTML = "동일한 암호를 입력하세요.";
       $("#submit").attr("disabled", "disabled");
-   } else if(pw1== pw2 && pw2.length > 8) {
+   } else if(pw1 == pw2 && pw2.length >= 8) {
       document.getElementById('passwordChecked').style.color = "green";
       document.getElementById('passwordChecked').innerHTML = "암호가 확인 되었습니다.";
       $("#submit").removeAttr("disabled");
-
    }
 
 }
