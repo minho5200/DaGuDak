@@ -135,7 +135,6 @@ alert("게시글이 삭제되었습니다.");
 								<button onclick="document.getElement('search').submit()"
 									class="icon fa fa-search"
 									style="border-color: transparent; background-color: transparent;"></button>
-
 							</div>
 						</form>
 					</div>
@@ -147,10 +146,11 @@ alert("게시글이 삭제되었습니다.");
 					<div class="col text-center">
 						<div class="block-27">
 							<ul>
-								<%-- <c:if test = "${map.boardPager.curBlock>1 }">
-                  <a href = "javascript:list('1')">[처음]</a>
-                  </c:if> --%>
-								<c:if test="${map.boardPager.curBlock > 1 }">
+								<%--  <c:if test = "${map.boardPager.curBlock>=1 }">
+								 <li><a 
+										href="javascript:listBtn('${sessionScope.bid }','1','${map.searchOption}','${map.keyword }')">&lt;&lt;</a></li>
+                  </c:if>  --%>
+								<c:if test="${map.boardPager.curBlock >1 }">
 									<li><a 
 										href="javascript:listBtn('${sessionScope.bid }','${map.boardPager.prevPage }','${map.searchOption}','${map.keyword }')">&lt;</a></li>
 								</c:if>
@@ -172,9 +172,10 @@ alert("게시글이 삭제되었습니다.");
 										href="javascript:listBtn('${sessionScope.bid }','${map.boardPager.nextPage }','${map.searchOption}','${map.keyword }')">&gt;</a></li>
 								</c:if>
 
-								<%--     <c:if test="${map.boardPager.curPage<=map.boardPager.totPage }">   
-                  <a href="javascript:list('${map.boardPager.totPage }')">[끝]</a>
-                  </c:if> --%>
+				<%--     <c:if test="${map.boardPager.curPage<=map.boardPager.totPage }">   
+								 <li><a 
+										href="javascript:listBtn('${sessionScope.bid }','${map.boardPager.totPage }','${map.searchOption}','${map.keyword }')">&gt;&gt;</a></li>
+                  </c:if>  --%>
 								
 							</ul>
 						</div>
