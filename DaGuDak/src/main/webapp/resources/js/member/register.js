@@ -134,6 +134,5 @@ function checkBirth() {
          document.getElementById('checkBirth').innerHTML = "성인이 아닙니다.";
          $("#submit").attr("disabled", "disabled");
       }
-
    }
  }
