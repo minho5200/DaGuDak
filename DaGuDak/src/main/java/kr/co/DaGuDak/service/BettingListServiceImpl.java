@@ -43,11 +43,9 @@ public class BettingListServiceImpl implements BettingListService{
 		return dao.bettingIdList(map);
 	}
 	
-
 	@Override
 	public int countBettingHistory(int race_No, String searchOption, String keyword) throws Exception {
 		return dao.countBettingHistory(race_No, searchOption, keyword);
-		
 	}
 
 	@Override

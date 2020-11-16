@@ -3,7 +3,6 @@
 "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 
 <mapper namespace="bettingList">
-
 	<sql id="search">
 		<choose>
 			<when test="searchOption=='all'">
@@ -18,8 +17,7 @@
 			</when>
 			<otherwise>
 				WHERE ${searchOption} like '%'||#{keyword}||'%'
-				AND race_no
-				= #{race_no}
+				AND race_no = #{race_no}
 			</otherwise>
 		</choose>
 	</sql>
@@ -28,7 +26,6 @@
 		SELECT *
 		FROM(
 		SELECT ROWNUM AS rn, A.* FROM(
-
 	</sql>
 	<sql id="pagingFooter">
 		)A
@@ -48,7 +45,6 @@
 		#{betting_point},
 		#{selected_horse}
 		)
-
 	</insert>
 
 	<select id="totalBettingPoint" resultType="int">
@@ -63,16 +59,14 @@
 		WHERE RACE_NO = #{race_No}
 		AND SELECTED_HORSE = #{horseNo}
 		GROUP BY SELECTED_HORSE
-
 	</select>
 
 	<select id="bettingIdList" resultType="BettingListVO">
 		select * from betting_list
 		where race_no = #{race_No} and selected_horse = #{horseNo}
-
 	</select>
 
-<select id="listAll" resultType="BettingListVO">
+	<select id="listAll" resultType="BettingListVO">
 		<include refid="pagingHeader" />
 		SELECT
 		b.race_no, b.member_id, b.betting_point, b.selected_horse,
@@ -83,7 +77,6 @@
 		<include refid="search" />
 		<include refid="pagingFooter" />
 	</select>
-
 
 	<select id="countBettingHistory" resultType="int">
 		SELECT COUNT(*)

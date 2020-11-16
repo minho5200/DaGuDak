@@ -52,6 +52,7 @@ public class BetController {
 		int fifthHorseTotalBettingPoint = bettingListService.horseTotalBettingPoint(race_No, fifth_Horse);
 
 		MemberVO vo = memberService.userInfo(loginId);
+		
 		model.addAttribute("memberVo", vo);
 		model.addAttribute("raceInfo", raceInfo);
 		model.addAttribute("totalBettingPoint", totalBettingPoint);
