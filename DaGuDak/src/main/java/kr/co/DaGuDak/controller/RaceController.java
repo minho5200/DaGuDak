@@ -195,7 +195,7 @@ public class RaceController {
 		ArrayList<BettingListVO> fourth_BettingidList = (ArrayList<BettingListVO>) bettingListService
 				.bettingIdList(race_no, fourth_place);
 		ArrayList<BettingListVO> fifth_BettingidList = (ArrayList<BettingListVO>) bettingListService
-				.bettingIdList(race_no, fifth_place);
+				.bettingIdList(race_no, fifth_place); 
 		// 총상금
 		int totalprice = firstHorseTotalBettingPoint + secondHorseTotalBettingPoint + thirdHorseTotalBettingPoint
 				+ fourthHorseTotalBettingPoint + fifthHorseTotalBettingPoint;
