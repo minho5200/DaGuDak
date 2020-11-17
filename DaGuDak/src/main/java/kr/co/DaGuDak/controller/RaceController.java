@@ -53,7 +53,7 @@ public class RaceController {
 			resultDate = transFormat.parse(date.replace("T", " "));
 		} else {
 			String date = transFormat.format(new Date());
-			resultDate = transFormat.parse(date.replace("", ""));
+			resultDate = transFormat.parse(date);
 		}
 
 		ArrayList<Integer> selectedHorses = new ArrayList<Integer>();
@@ -109,7 +109,6 @@ public class RaceController {
 					return "race/todayGameEnd";
 				}
 			}
-
 		}
 
 		// 직접 눌렀을때 admin의 state trigger.
@@ -225,7 +224,7 @@ public class RaceController {
 					}
 				}
 
-				// 3등 금액 몰수
+				// 3등 금액 분배
 				for (BettingListVO bettingListVO : third_BettingidList) {
 					if (bettingListVO != null) {
 						int currentMemberPoint = memberService.getPoint(bettingListVO.getMember_id());
@@ -234,7 +233,7 @@ public class RaceController {
 						memberService.updateGames(bettingListVO.getMember_id());
 					}
 				}
-				// 2등 금액 몰수
+				// 2등 금액 분배
 				for (BettingListVO bettingListVO : second_BettingidList) {
 					if (bettingListVO != null) {
 						int currentMemberPoint = memberService.getPoint(bettingListVO.getMember_id());

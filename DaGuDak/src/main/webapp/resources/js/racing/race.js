@@ -61,7 +61,6 @@ function gogo() {
             speed[i][j] = (fifthHorseSpeed[j] / 10) + Math.random() * (0.1)
                   * (Math.random() < 0.5 ? -1 : 1);
          }
-
       }
    }
    race();
@@ -69,7 +68,6 @@ function gogo() {
 
 // 경기 진행
 function race() {
-
    // 동물의 DIV
 
    // 말 이미지

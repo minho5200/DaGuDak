@@ -288,9 +288,6 @@ hr {
    var loginId = "익명";
    </script>
    </c:if>
- 
-
-   
    <!-- 출전마 정보 -->
 <script type="text/javascript">
 var webSocket = new WebSocket('ws://172.30.1.30:8089/DaGuDak/racing/' + loginId);

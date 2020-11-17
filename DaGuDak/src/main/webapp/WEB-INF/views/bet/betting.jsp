@@ -48,7 +48,6 @@ var maxPoint = ${memberVo.point };
             ${memberVo.name }님   ${memberVo.point } P
             </div>
             </c:if>
-            
          </div>
       </div>
    </div>
