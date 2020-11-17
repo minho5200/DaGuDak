@@ -16,7 +16,6 @@
 		<typeAlias alias ="RaceResultVO" type = "kr.co.DaGuDak.model.RaceResultVO"/>
 		<typeAlias alias ="RaceBetVO" type = "kr.co.DaGuDak.model.RaceBetVO"/>
 		<typeAlias alias = "BettingListVO" type = "kr.co.DaGuDak.model.BettingListVO"></typeAlias>
-		
 	</typeAliases>
 
 </configuration>
