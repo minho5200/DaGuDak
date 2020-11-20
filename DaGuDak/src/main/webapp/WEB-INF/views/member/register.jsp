@@ -76,8 +76,7 @@
                   </div>
                 </div>
                <!-- div row 끝 -->
-                
-               
+
                 <div style="margin-left: auto;  margin-right: auto; margin-top: 20px;">
                   <input type="submit" class="btn btn-success" id="submit" disabled="disabled" value="회원가입">
                   <button class="cencle btn btn-danger" type="reset" >취소하기</button>
