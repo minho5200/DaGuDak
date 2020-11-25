@@ -70,7 +70,8 @@
 		<div class="row block-9"
 			style="margin: auto; margin-bottom: 50px; padding: 0 calc(50% - 200px);">
 			<div>
-				<form id="chargeFrm" name="chargeFrm" action="${pageContext.request.contextPath}/member/pointBank"
+				<form id="chargeFrm" name="chargeFrm" 
+				action="${pageContext.request.contextPath}/member/pointBank"
 					method="post" 
 					class="p-4 p-md-5 contact-form">
 					<div class="row">
