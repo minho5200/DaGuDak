@@ -13,18 +13,7 @@ function fn_idChk() {
                   $("#chkID").html("이미 사용중인 아이디입니다.");
                   $("#submit").attr("disabled", "disabled");
 
-               } else if (data == 0 && member_id.length >= 8) {
-                  $("#chkID").css("color", "green");
-                  $("#chkID").html("사용가능한 아이디입니다.");
-                  $("#submit").removeAttr("disabled");
-                  
-                  if (member_id.search(/\s/) != -1) {
-                     $("#chkID").css("color", "red");
-                     document.getElementById('chkID').innerHTML = "아이디는 공백 없이 입력해주세요.";
-                     $("#submit").attr("disabled", "disabled");
-                     return false;
-                  }
-               } else if (member_id.length < 8) {
+               }else if (member_id.length < 8) {
                   $("#chkID").css("color", "red");
                   document.getElementById('chkID').innerHTML = "8자리 이상 입력해주세요.";
                   $("#submit").attr("disabled", "disabled");
@@ -38,7 +27,18 @@ function fn_idChk() {
                   document.getElementById('chkID').innerHTML = "아이디는 공백 없이 입력해주세요.";
                   $("#submit").attr("disabled", "disabled");
                   return false;
-               }
+               } else if (data == 0 && member_id.length >= 8) {
+                   $("#chkID").css("color", "green");
+                   $("#chkID").html("사용가능한 아이디입니다.");
+                   $("#submit").removeAttr("disabled");
+                   
+                   if (member_id.search(/\s/) != -1) {
+                      $("#chkID").css("color", "red");
+                      document.getElementById('chkID').innerHTML = "아이디는 공백 없이 입력해주세요.";
+                      $("#submit").attr("disabled", "disabled");
+                      return false;
+                   }
+                  }
             }
          })
 }

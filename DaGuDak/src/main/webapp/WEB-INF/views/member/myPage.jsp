@@ -83,8 +83,8 @@
 
 							<input type="submit" value="회원수정"
 								onclick="javascript:myPageForm.action='${pageContext.request.contextPath}/member/myPageUpdate';"
-								id="Update" class="btn btn-primary py-2 px-3"> <input
-								type="submit" value="회원탈퇴"
+								id="Update" class="btn btn-primary py-2 px-3"> 
+							<input type="submit" value="회원탈퇴" 
 								onclick="javascript:myPageForm.action='${pageContext.request.contextPath}/member/deleteMember';"
 								id="Delete" class="btn btn-dark py-2 px-3">
 						</div>

@@ -1,7 +1,5 @@
 package kr.co.DaGuDak.dao;
 
-import javax.servlet.http.HttpSession;
-
 import kr.co.DaGuDak.model.MemberVO;
 
 public interface MemberDAO {
@@ -18,8 +16,6 @@ public interface MemberDAO {
 	public MemberVO viewMember(MemberVO vo) throws Exception;
 
 	// 로그아웃
-	public void logout(HttpSession session) throws Exception;
-
 	public void updateMember(MemberVO vo) throws Exception;
 
 	public MemberVO userInfo(String member_id) throws Exception;

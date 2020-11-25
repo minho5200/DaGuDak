@@ -13,13 +13,11 @@
          </div>
          
          <!-- 회원가입 후 메인 , 로그인 버튼 -->
-                 <div align="center" style="margin-bottom: 200px;">
-       			 <a href="${pageContext.request.contextPath}" class="btn btn-dark"> 메인 페이지 가기 </a> 
-       			    <a href="#" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalCenter">로그인</a></p>  
-       			 </div>
-       	 	     
-       	 	     
-       	 	     
+        <div align="center" style="margin-bottom: 200px;">
+       	 <a href="${pageContext.request.contextPath}" class="btn btn-dark"> 메인 페이지 가기 </a> 
+       	    <a href="#" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalCenter">로그인</a></p>  
+       	</div>
+       			 
        <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
          <div class="modal-dialog modal-dialog-centered" role="document"> 
          <!-- 로그인 모달창 -->
@@ -44,7 +42,6 @@
                         
                         <div>
                             <input type="checkbox" id="idSaveCheck"> 아이디 기억하기
-                         
                         </div>
                       
                         <div class="form-group">

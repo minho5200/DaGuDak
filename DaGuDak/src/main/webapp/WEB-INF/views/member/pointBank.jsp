@@ -18,7 +18,7 @@
 	IMP.init("imp89273076"); // 식별코드
 
 	function requestPay() {
-		var point = document.charge.point.value *= 1;
+		var point = document.chargeFrm.point.value *= 1;
 		var msg;
 		/* IMP.request_pay(param, callback) 호출 */
 		IMP.request_pay({ // param
@@ -70,9 +70,8 @@
 		<div class="row block-9"
 			style="margin: auto; margin-bottom: 50px; padding: 0 calc(50% - 200px);">
 			<div>
-				<form name="charge"
-					action="${pageContext.request.contextPath}/member/pointBank"
-					method="post" id="chargeFrm" name="chargeFrm"
+				<form id="chargeFrm" name="chargeFrm" action="${pageContext.request.contextPath}/member/pointBank"
+					method="post" 
 					class="p-4 p-md-5 contact-form">
 					<div class="row">
 

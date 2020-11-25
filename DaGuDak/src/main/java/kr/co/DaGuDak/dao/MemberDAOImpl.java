@@ -25,11 +25,6 @@ public class MemberDAOImpl implements MemberDAO {
 		return result;
 	}
 
-	@Override // 로그아웃
-	public void logout(HttpSession session) throws Exception {
-
-	}
-
 	@Override // 로그인 확인
 	public boolean loginCheck(MemberVO vo) throws Exception {
 		String name = SqlSession.selectOne("member.loginCheck", vo);
@@ -39,7 +34,6 @@ public class MemberDAOImpl implements MemberDAO {
 
 	@Override
 	public MemberVO viewMember(MemberVO vo) throws Exception {
-		SqlSession.selectOne("member.viewMember", vo);
 		return SqlSession.selectOne("member.viewMember", vo);
 	}
 
