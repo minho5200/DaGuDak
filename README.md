@@ -63,14 +63,68 @@
 &nbsp;&nbsp;&nbsp;
 
 # Summary
-- 회원 CRUD
-- 이니시스 결제 시스템을 통한 포인트 충전
-- 게시판 CRUD (게시글, 댓글)
-- 네이버 뉴스검색API를 이용한 경마 뉴스 게시판
-- 경주마 및 경기 CRUD
-- 베팅 / 상금
-- Javascript로 구현한 경마 게임
-- WebSocket을 이용한 실시간 경기 및 채팅
+<details markdown = "1">
+<summary>회원 CRUD</summary>
+
+![image](pptImages/1member.JPG)
+ 
+</details>
+
+<details markdown = "1">
+<summary>이니시스 결제 시스템을 통한 포인트 충전</summary>
+
+![image](pptImages/2point.JPG)
+ 
+</details>
+
+<details markdown = "1">
+<summary>게시판 CRUD (게시글, 댓글)</summary>
+
+![image](pptImages/3board.JPG)
+ 
+</details>
+
+<details markdown = "1">
+<summary>네이버 뉴스검색API를 이용한 경마 뉴스 게시판</summary>
+
+![image](pptImages/4boardAPI.JPG)
+ 
+</details>
+
+<details markdown = "1">
+<summary>경주마 및 경기 CRUD</summary>
+
+![image](pptImages/5horse.JPG)
+ 
+</details>
+
+<details markdown = "1">
+<summary>베팅</summary>
+
+![image](pptImages/6betting.JPG)
+ 
+</details>
+
+<details markdown = "1">
+<summary>상금</summary>
+
+![image](pptImages/7reward.JPG)
+ 
+</details>
+
+<details markdown = "1">
+<summary>Javascript로 구현한 경마 게임</summary>
+
+![image](pptImages/8racing.JPG)
+ 
+</details>
+
+<details markdown = "1">
+<summary>WebSocket을 이용한 실시간 경기 및 채팅</summary>
+
+![image](pptImages/9chatting.JPG)
+ 
+</details>
 
 &nbsp;&nbsp;&nbsp;
 
