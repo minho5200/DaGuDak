@@ -12,13 +12,12 @@ function deleteHorse(horse_no) {
    var result = confirm("말을 삭제하시겠습니까?");
    if(result) {
       location.href="/DaGuDak/horse/delete?horse_no="+horse_no;
-      alret("삭제되었습니다.")
    }
 };
 
 function horseList() {
    location.href="/DaGuDak/horse/horses";   
-}
+};
 </script>
 <c:if test="${deleteResult == 'false'}">
 <script>
@@ -68,7 +67,8 @@ alert("삭제에 실패했습니다.");
                         </tr>
                         <tr>
                         <td><b>구간별 속도</b></td>
-                        <td> <c:set var="horseSpeed" value="${horse.speed }"/>${fn:substring(horseSpeed,0,1) },${fn:substring(horseSpeed,1,2) },${fn:substring(horseSpeed,2,3) },${fn:substring(horseSpeed,3,4) }</td>
+                        <td> <c:set var="horseSpeed" value="${horse.speed }"/>
+                        ${fn:substring(horseSpeed,0,1) },${fn:substring(horseSpeed,1,2) },${fn:substring(horseSpeed,2,3) },${fn:substring(horseSpeed,3,4) }</td>
                         </tr>
                         <tr>
                            <td><b>우승 횟수</b></td>

@@ -62,7 +62,6 @@ public class CommentController {
 	public ModelAndView update(@ModelAttribute CommentVO vo, RedirectAttributes ra, HttpSession session)
 			throws Exception {
 
-		// 수정 버튼 눌렀을때 cmtno 넘어오게 하는 방법 생각해보기
 		String url = "";
 		RedirectView rv = new RedirectView();
 
