@@ -145,7 +145,7 @@
                <li id="menu4" class="nav-item " style="width:15%;"><a href="${pageContext.request.contextPath}/horse/horses" class="nav-link" style="text-align:center; font-weight:bold" >경주마 정보</a></li>
                <li id="menu5" class="nav-item " style="width:15%;"><a href="${pageContext.request.contextPath}/board/list?bid=2" class="nav-link" style="text-align:center; font-weight:bold" >경마 뉴스</a></li>
                <li id="menu6" class="nav-item " style="width:15%;"><a href="${pageContext.request.contextPath}/board/list?bid=3" class="nav-link" style="text-align:center; font-weight:bold" >익명게시판</a></li>
-               <li id="menu7" class="nav-item " style="width:15%;"><a href="${pageContext.request.contextPath}/board/list?bid=4" class="nav-link" style="text-align:center; font-weight:bold"  " >고객센터</a></li>
+               <li id="menu7" class="nav-item " style="width:15%;"><a href="${pageContext.request.contextPath}/board/list?bid=4" class="nav-link" style="text-align:center; font-weight:bold" >고객센터</a></li>
             </ul>
          </div>
       </div>

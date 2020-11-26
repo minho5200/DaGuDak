@@ -176,7 +176,6 @@ alert("게시글이 삭제되었습니다.");
 								 <li><a 
 										href="javascript:listBtn('${sessionScope.bid }','${map.boardPager.totPage }','${map.searchOption}','${map.keyword }')">&gt;&gt;</a></li>
                   </c:if>  --%>
-								
 							</ul>
 						</div>
 					</div>
