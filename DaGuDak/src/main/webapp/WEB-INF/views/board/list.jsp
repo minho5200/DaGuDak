@@ -82,6 +82,7 @@ alert("게시글이 삭제되었습니다.");
 					<div class="cell">조회수</div>
 					</c:if>
 				</div>
+				
 				<c:forEach var="row" items="${map.list }">
 						<div class="rows" onclick="javascript:contentBtn('${row.bno}', '${map.boardPager.curPage }', '${map.searchOption }', '${map.keyword }')">
 						<div class="cell" data-title="번호">${row.bno}</div>
