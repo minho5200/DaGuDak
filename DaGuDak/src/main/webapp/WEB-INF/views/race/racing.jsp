@@ -261,8 +261,7 @@ hr {
             <input type="submit" value="send" class="btn btn-primary py-1 px-2" onclick="send()"/>
          </div>
       </div>
-      <div class="userList">
-         참가자 목록
+      <div class="userList">참가자 목록
          <hr style="border: solid 1px lightgray;">
          <div id="chatList" class="chatList-body"></div>
       </div>
@@ -276,21 +275,20 @@ hr {
 
 </div>
 
-
-
 <c:if test = "${userId != null }">
    <script>
-            var loginId = '${userId}';
-         </script>
-   </c:if>
-   <c:if test = "${userId == null }">
+       var loginId = '${userId}';
+   </script>
+</c:if>
+<c:if test = "${userId == null }">
    <script>
    var loginId = "익명";
    </script>
-   </c:if>
+</c:if>
+
    <!-- 출전마 정보 -->
 <script type="text/javascript">
-var webSocket = new WebSocket('ws://172.30.1.30:8089/DaGuDak/racing/' + loginId);
+var webSocket = new WebSocket('ws://127.0.0.1:8089/DaGuDak/racing/' + loginId);
    /* 경기 출전할 말 리스트  -- RaceVO */
    var horseRoster = new Array(5); 
     horseRoster[0] = ${racingHorseList.first_Horse};
@@ -341,6 +339,7 @@ var webSocket = new WebSocket('ws://172.30.1.30:8089/DaGuDak/racing/' + loginId)
          a[i] = Number(a[i]);
       } 
    }
+   
    var player = new Array(5);
    player[0] = document.getElementById("img1");
    player[1] = document.getElementById("img2");

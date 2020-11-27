@@ -28,7 +28,6 @@ function onMessage(event) {
 
    if (fromWebsocket.includes("[clients]")) {
       userList = fromWebsocket.replace("[clients]", "");
-      ;
       chatList.innerHTML = userList;
    } else if (fromWebsocket.includes("[message]")) {
       valueFromWebSocket = fromWebsocket.replace("[message]", "");

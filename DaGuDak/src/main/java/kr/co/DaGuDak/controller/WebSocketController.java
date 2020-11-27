@@ -20,17 +20,18 @@ import javax.websocket.server.ServerEndpoint;
 public class WebSocketController {
 	private static Set<Session> clients = Collections.synchronizedSet(new HashSet<Session>());
 	private static String clientListString = "";
-	Map<String, String> clientMap = new HashMap<String, String>();
+	private static Map<String, String> clientMap = new HashMap<String, String>();
+	
 	// Map에서 키를 loginId로 value를 getId로
 
 	@OnOpen // 클라이언트가 웹소켓에 들어오고 서버에 아무런 문제 없이 들어왔을때 실행하는 메소드입니다.
 	public void onOpen(Session session, @PathParam("loginId") String loginId) throws IOException, EncodeException {
-		if (loginId.equals("익명")) {
+		if (loginId.equals("익명")) {// 익명 접속
 			clients.add(session);
 			loginId += session.getId();
-		} else if (!clientListString.contains(loginId)) {
+		} else if (!clientListString.contains(loginId)) { //로그인 아이디
 			clients.add(session);
-		} else if (clientListString.contains(loginId)) {
+		} else if (clientListString.contains(loginId)) { // 이미 접속되어있다면
 			clientMap.put(session.getId(), loginId + "[dupl]");
 			session.getBasicRemote().sendText("[enter]이미 채팅에 참여 중입니다.");
 			session.close();
@@ -57,7 +58,6 @@ public class WebSocketController {
 					}
 				}
 				return;
-
 			} else if (message.contains("[timer]")) {
 				for (Session client : clients) {
 					if (!client.equals(session)) {
@@ -92,7 +92,7 @@ public class WebSocketController {
 			return;
 		}
 		clientListString = clientListString.replace(loginId + "<br>", "");
-		clientMap.clear();
+		clientMap.remove(loginId);
 		clients.remove(session);
 		for (Session client : clients) {
 			client.getBasicRemote().sendText("[exit]<b>" + loginId + "</b>님이 퇴장하셨습니다.");
