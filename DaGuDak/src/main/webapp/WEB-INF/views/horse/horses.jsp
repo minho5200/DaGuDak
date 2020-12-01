@@ -96,7 +96,6 @@ alert("삭제되었습니다.");
                              <c:set var="horseSpeed" value="${horse.speed }"/> 구간별 속도: 
                              ${fn:substring(horseSpeed,0,1) },${fn:substring(horseSpeed,1,2) },${fn:substring(horseSpeed,2,3) },${fn:substring(horseSpeed,3,4) }
                              </b><br>
-
                            승률: ${horse.win_rate} %
                            </a>
                         </h3>

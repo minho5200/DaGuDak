@@ -52,9 +52,10 @@ public class BetController {
 		int fifthHorseTotalBettingPoint = bettingListService.horseTotalBettingPoint(race_No, fifth_Horse);
 
 		MemberVO vo = memberService.userInfo(loginId);
-		
+
 		model.addAttribute("memberVo", vo);
 		model.addAttribute("raceInfo", raceInfo);
+
 		model.addAttribute("totalBettingPoint", totalBettingPoint);
 		model.addAttribute("firstHorseTotalBettingPoint", firstHorseTotalBettingPoint);
 		model.addAttribute("secondHorseTotalBettingPoint", secondHorseTotalBettingPoint);
@@ -81,6 +82,7 @@ public class BetController {
 		RaceBetVO raceInfo = betService.selectedRaceList(bettingListVo.getRace_no());
 
 		int totalBettingPoint = bettingListService.totalBettingPoint(bettingListVo.getRace_no());
+
 		int firstHorseTotalBettingPoint = bettingListService.horseTotalBettingPoint(bettingListVo.getRace_no(),
 				raceInfo.getFirst_Horse());
 		int secondHorseTotalBettingPoint = bettingListService.horseTotalBettingPoint(bettingListVo.getRace_no(),
@@ -110,12 +112,12 @@ public class BetController {
 			@RequestParam(defaultValue = "") String keyword, @RequestParam(defaultValue = "1") int curPage,
 			@RequestParam("race_No") int race_No) throws Exception {
 		ModelAndView mav = new ModelAndView();
-		
-		int count = bettingListService.countBettingHistory(race_No ,searchOption, keyword);
+
+		int count = bettingListService.countBettingHistory(race_No, searchOption, keyword);
 		BoardPager boardPager = new BoardPager(count, curPage);
 		int start = boardPager.getPageBegin();
 		int end = boardPager.getPageEnd();
-		List<BettingListVO> list = bettingListService.bettingList(start, end, searchOption, keyword,race_No);
+		List<BettingListVO> list = bettingListService.bettingList(start, end, searchOption, keyword, race_No);
 		Map<String, Object> map = new HashMap<String, Object>();
 
 		map.put("list", list);

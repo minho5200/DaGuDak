@@ -62,7 +62,7 @@ public class BettingListDaoImpl implements BettingListDao {
 		map.put("start", start);
 		map.put("end", end);
 		map.put("race_no", race_No);
-		
+
 		return sqlSession.selectList("bettingList.listAll", map);
 	}
 

@@ -4,7 +4,6 @@ import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
-import java.util.Locale;
 
 import javax.inject.Inject;
 import javax.servlet.http.HttpServletRequest;
@@ -12,7 +11,6 @@ import javax.servlet.http.HttpSession;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -43,8 +41,8 @@ public class RaceController {
 	MemberService memberService;
 
 	@RequestMapping(value = "createRace", method = RequestMethod.POST)
-	public String createRace(HttpServletRequest request, ModelMap model) throws Exception {
-		String[] arr = request.getParameterValues("chkHorse");
+	public String createRace(HttpServletRequest request) throws Exception {
+		String[] checkedHorses = request.getParameterValues("chkHorse");
 		SimpleDateFormat transFormat = new SimpleDateFormat("yyyy-MM-dd HH:mm");
 		Date resultDate;
 
@@ -58,8 +56,8 @@ public class RaceController {
 
 		ArrayList<Integer> selectedHorses = new ArrayList<Integer>();
 
-		for (String temp : arr) {
-			selectedHorses.add(Integer.parseInt(temp));
+		for (String horseNo : checkedHorses) {
+			selectedHorses.add(Integer.parseInt(horseNo));
 		}
 		int isNewGame = raceService.isNewGame();
 		if (isNewGame > 0) {
@@ -71,7 +69,7 @@ public class RaceController {
 	}
 
 	@RequestMapping(value = "racingList", method = RequestMethod.GET)
-	public String racingList(Locale locale, Model model) throws Exception {
+	public String racingList(Model model) throws Exception {
 
 		List<Object> list = raceService.raceList();
 
@@ -109,21 +107,21 @@ public class RaceController {
 					return "race/todayGameEnd";
 				}
 			}
-		}
-
-		// 직접 눌렀을때 admin의 state trigger.
-		if (session.getAttribute("userId") != null) {
-			String loginId = (String) session.getAttribute("userId");
-			if (loginId.equals("admin")) {// admin계정이면
-				String state = raceService.whatState(race_no);
-				if (state.equals("N")) {
-					raceService.updateRaceStateNToSoon(race_no);
-				} else if (state.equals("SOON")) {
-					raceService.updateRaceStateSoonToIng(race_no);
+		} else {
+			// 직접 눌렀을때 admin의 state trigger.
+			if (session.getAttribute("userId") != null) {
+				String loginId = (String) session.getAttribute("userId");
+				if (loginId.equals("admin")) {// admin계정이면
+					String state = raceService.whatState(race_no);
+					if (state.equals("N")) {
+						raceService.updateRaceStateNToSoon(race_no);
+					} else if (state.equals("SOON")) {
+						raceService.updateRaceStateSoonToIng(race_no);
+					}
 				}
 			}
 		}
-
+		
 		RaceVO racingHorseList = (RaceVO) raceService.selectedRaceList(race_no);
 
 		HorseVO firstHorse = horseService.read(racingHorseList.getFirst_Horse());
@@ -143,6 +141,7 @@ public class RaceController {
 		return "race/racing";
 	}
 
+	//지난 경기 결과 출력
 	@RequestMapping(value = "racingResult", method = RequestMethod.GET)
 	public String racingResult(@RequestParam("race_No") int race_No, @RequestParam("first_Place") int first_place,
 			@RequestParam("second_Place") int second_place, @RequestParam("third_Place") int third_place, Model model)
@@ -167,7 +166,7 @@ public class RaceController {
 			@RequestParam("first_place") int first_place, @RequestParam("second_place") int second_place,
 			@RequestParam("third_place") int third_place, @RequestParam("fourth_place") int fourth_place,
 			@RequestParam("fifth_place") int fifth_place, Model model, HttpSession session) throws Exception {
-		
+
 		if (session.getAttribute("userId") != null) {
 			String loginId = (String) session.getAttribute("userId");
 			if (loginId.equals("admin")) {// admin계정이면
@@ -194,7 +193,8 @@ public class RaceController {
 		ArrayList<BettingListVO> fourth_BettingidList = (ArrayList<BettingListVO>) bettingListService
 				.bettingIdList(race_no, fourth_place);
 		ArrayList<BettingListVO> fifth_BettingidList = (ArrayList<BettingListVO>) bettingListService
-				.bettingIdList(race_no, fifth_place); 
+				.bettingIdList(race_no, fifth_place);
+		
 		// 총상금
 		int totalprice = firstHorseTotalBettingPoint + secondHorseTotalBettingPoint + thirdHorseTotalBettingPoint
 				+ fourthHorseTotalBettingPoint + fifthHorseTotalBettingPoint;

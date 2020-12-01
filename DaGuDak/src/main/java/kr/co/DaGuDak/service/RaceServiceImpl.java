@@ -38,8 +38,6 @@ public class RaceServiceImpl implements RaceService {
 		vo.setIsEnd("SOON");
 		
 		dao.createRaceNew(vo);
-		
-		
 	}
 
 	
@@ -55,7 +53,6 @@ public class RaceServiceImpl implements RaceService {
 		vo.setRace_Date(resultDate);
 
 		dao.createRace(vo);
-
 	}
 
 	@Override
