@@ -36,7 +36,6 @@ var first = 0; // 1등
 var rac = new Array(5);
 var horse_no = new Array(5);
 var jump = 0;
-
 var winner = 0;
 
 // 버튼누르면 출발함
@@ -175,11 +174,8 @@ function race() {
 
          // 현재 위치에 따라 표시
          player[i].style.left = rally[i] + "px"; // 현재 위치
-
       }
-      
    }
-
 }
 
 // 2차원 배열 생성
@@ -221,10 +217,9 @@ function start() { // 시작 버튼 연결
 
 // 경기 결과 업데이트 url
 function updateRaceResult(isEnd) {
-	
 	webSocket.send("[hostGameEnd]" + race_no + "//" + isEnd + "//" + first_place+"//"+ second_place + "//" + third_place + "//" + fourth_place + "//" + fifth_place);
-	  
-   location.href = "/DaGuDak/race/updateRaceResult?race_no=" + race_no
+
+	location.href = "/DaGuDak/race/updateRaceResult?race_no=" + race_no
          + "&isEnd=" + isEnd + "&first_place=" + first_place
          + "&second_place=" + second_place + "&third_place=" + third_place
          + "&fourth_place=" + fourth_place + "&fifth_place=" + fifth_place;

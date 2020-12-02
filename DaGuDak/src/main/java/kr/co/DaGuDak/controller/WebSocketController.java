@@ -29,7 +29,7 @@ public class WebSocketController {
 		if (loginId.equals("익명")) {// 익명 접속
 			clients.add(session);
 			loginId += session.getId();
-		} else if (!clientListString.contains(loginId)) { //로그인 아이디
+		} else if (!clientListString.contains(loginId)) { // 로그인 아이디
 			clients.add(session);
 		} else if (clientListString.contains(loginId)) { // 이미 접속되어있다면
 			clientMap.put(session.getId(), loginId + "[dupl]");
@@ -49,6 +49,7 @@ public class WebSocketController {
 
 	@OnMessage // 클라이언트에게 메시지가 들어왔을 때, 실행되는 메소드입니다.
 	public void onMessage(String message, Session session) throws IOException {
+		// 자기 자신한테는 보내지 않음
 		synchronized (clients) {
 			String loginId = clientMap.get(session.getId());
 			if (message.contains("[rally]")) {
@@ -76,7 +77,6 @@ public class WebSocketController {
 				String movemessage = "<div id='yourId'>" + loginId + "</div><div id='yourMessage'>" + message
 						+ "</div>";
 				for (Session client : clients) {
-					// 자기 자신한테는 보내지 않음
 					if (!client.equals(session)) {
 						client.getBasicRemote().sendText("[message]" + movemessage);
 					}
